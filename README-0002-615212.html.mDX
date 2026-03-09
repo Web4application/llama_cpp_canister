@@ -103,9 +103,17 @@ meld llama_cpp_onicai_fork/src/llama-vocab.cpp llama_cpp_onicai_fork_<git-sha-ol
     // std::vector<std::future<std::pair<ggml_tensor *, bool>>> validation_result;
     // ICPP-PATCH-END
     ... several other references to validation_result
-  ```
-- outcomment all uses of `getenv`
+  ```# !pip install llama-cpp-python
+```bash
+from llama_cpp import Llama
 
+llm = Llama.from_pretrained(
+	repo_id="Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+	filename="qwen2.5-0.5b-instruct-q3_k_m.gguf",
+)
+
+- outcomment all uses of `getenv`
+```
 #### llama_cpp_onicai_fork/src/llama-hparams.cpp
 - no modifications needed for the IC
 
